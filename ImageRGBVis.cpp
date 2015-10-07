@@ -26,8 +26,8 @@ typedef enum { ROTATE, TRANSLATE, SCALE } CONTROLSTATE;
 CONTROLSTATE g_ControlState = ROTATE;
 
 /* state of the world */
-float g_vLandRotate[3] = {-30.0, 0.0, 0.0};
-float g_vLandTranslate[3] = {0.0, 0.0, 0.0};
+float g_vLandRotate[3] = {0.0, 0.0, 0.0};
+float g_vLandTranslate[3] = {0.0, -100.0, 0.0};
 float g_vLandScale[3] = {1.0, 1.0, 1.0};
 
 Pic * g_ImageData;
@@ -130,7 +130,8 @@ void doIdle(){
 
 	prev_ticks = t;
 
-	//g_vLandRotate[1] += (0.01 + deltaTicks*0.01);
+  // rotate while idle
+	g_vLandRotate[1] += (deltaTicks*0.05);
 	glutPostRedisplay();
 }
 
@@ -178,8 +179,8 @@ void mousedrag(int x, int y){
 }
 
 void mouseidle(int x, int y){
-	g_vMousePos[0] = x;
-  	g_vMousePos[1] = y;
+  g_vMousePos[0] = x;
+  g_vMousePos[1] = y;
 }
 
 void mousebutton(int button, int state, int x, int y)
