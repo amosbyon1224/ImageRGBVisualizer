@@ -5,6 +5,6 @@ A simple OpenGL program that I wrote to help students visualize the RGB colorspa
 To compile: `make`
 This assumes that there is a pic directory one level above
 
-To run: `./rgbvis [IMAGEFILENAME]
+To run: `./rgbvis [IMAGEFILENAME]`
 
 ![Sample Program View](rgbvis.gif)
